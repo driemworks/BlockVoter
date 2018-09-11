@@ -1,0 +1,28 @@
+<div class="createPoll">
+    <form>
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input [(ngModel)]="model.name" placeholder="name" type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="description">description</label>
+            <input [(ngModel)]="model.description" placeholder="description" type="description" class="form-control" id="description" name="description" required>
+        </div>
+        <div class="form-group">
+            <label for="candidates">Candidates</label>
+            <input [(ngModel)]="model.candidates" placeholder="candidates (comma separated)" type="candidates" class="form-control" id="candidates" name="candidates" required>
+        </div>
+        <div class="form-group">
+                <label for="gas">Gas</label>
+                <input [(ngModel)]="gas" placeholder="gas amount" type="text" class="form-control" id="gas" name="gas">
+            </div>
+        <button type="submit" class="btn btn-success" (click)="onSubmitPoll()">Submit</button>
+    </form>
+    <br><br>
+    <div *ngIf="!address && errors">
+        {{errors}}
+    </div>
+    <div *ngIf="address">
+        <span>Contract deployed at address: {{address}}</span>
+    </div>
+</div>

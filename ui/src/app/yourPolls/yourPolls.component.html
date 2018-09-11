@@ -1,0 +1,13 @@
+<div class="your-contracts">
+    <h3>Your Polls</h3>
+    <div *ngIf="pollAddresses">
+        <ul>
+            <li *ngFor="let address of pollAddresses" value={{address}}>
+                {{address}}
+            </li>
+        </ul>
+    </div>
+    <div *ngIf="!pollAddresses">
+        You have not yet created any polls.
+    </div>
+</div>

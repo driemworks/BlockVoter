@@ -1,0 +1,29 @@
+<div>
+    <input class="address-input" type="text" [(ngModel)]="contractAddress" />
+    <input type="submit" (click)="onJoinPoll()"/>
+</div>
+<br><br>
+<div>
+    <h1>{{name}}</h1>
+    <h4>{{description}}</h4>
+    <div *ngIf="currentContractCandidates">
+        <h3>Candidates</h3>
+        <ul>
+            <li *ngFor="let candidate of currentContractCandidates">
+                <button #btn id="btn" value={{candidate}} (click)="vote(btn.value)">{{candidate}}</button>
+            </li>
+        </ul>
+    </div>
+    <div *ngIf="chairman">
+        <h3>Chairman Address</h3>
+        {{chairman}}
+    </div>
+    <div *ngIf="results?.length > 0">
+        <h3>Results</h3>
+        <ul>
+            <li *ngFor="let result of results">
+                {{result}}
+            </li>
+        </ul>
+    </div>
+</div>
