@@ -13,11 +13,10 @@
     </div>
   </div>
 </div>
-<div class="home">
-  <button class="btn" (click)="onYourPolls()">Your Polls</button>
-  <button class="btn" (click)="onCreatePoll()">New Poll</button>
-  <button class="btn" (click)="onJoinPoll()">Join Poll</button>
-  <button class="btn" (click)="onAbout()">About</button>
+<div class="menu w3-bar">
+  <button class="w3-button" *ngFor="let item of menuButtons" [ngClass]="item.state ? 'w3-white' : 'w3-black'" (click)="navigate(item.route)">
+    {{item.text}}
+  </button>
 </div>
 
 <div class="router-outlet">

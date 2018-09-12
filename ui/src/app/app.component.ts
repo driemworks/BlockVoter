@@ -20,6 +20,29 @@ export class AppComponent implements OnInit {
   account: string;
   isConnectedToClient = false;
 
+  menuButtons = [
+    {
+      'text': 'Your Polls',
+      'state': false,
+      'route': '/your-polls'
+    },
+    {
+      'text': 'New Poll',
+      'state': false,
+      'route': '/create-poll'
+    },
+    {
+      'text': 'Join Poll',
+      'state': false,
+      'route': '/join-poll'
+    },
+    {
+      'text': 'About',
+      'state': false,
+      'route': '/about'
+    }
+  ];
+
   constructor(private router: Router,
               private web3Service: Web3Service) {
   }
@@ -35,7 +58,6 @@ export class AppComponent implements OnInit {
       this.account = this.web3Service.account;
       this.accounts = this.web3Service.accounts;
     });
-
   }
 
   ngOnInit() { }
@@ -44,20 +66,15 @@ export class AppComponent implements OnInit {
     this.web3Service.updateAccount(this.account);
   }
 
-  onYourPolls() {
-    this.router.navigateByUrl('/your-polls');
-  }
-
-  onCreatePoll()  {
-      this.router.navigateByUrl('/create-poll');
-  }
-
-  onJoinPoll() {
-      this.router.navigateByUrl('/join-poll');
-  }
-
-  onAbout() {
-    this.router.navigateByUrl('/about');
+  navigate(route) {
+    this.menuButtons.forEach(item => {
+      if (item.route === route) {
+        item.state = true;
+      } else {
+        item.state = false;
+      }
+    });
+    this.router.navigateByUrl(route);
   }
 
 }
