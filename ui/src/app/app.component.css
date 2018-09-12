@@ -23,6 +23,7 @@
 .network-info select {
     border: darkblue;
     border-style: ridge; 
+    color: black;
 }
 
 .router-outlet {

@@ -3,15 +3,20 @@
         <span>Your Polls</span>
     </div>
     <div class="poll-data">
+        
         <div *ngIf="pollAddresses">
-            <ul>
-                <li #item *ngFor="let address of pollAddresses" value={{address}} >
-                    <button #btn value={{address}} (click)="getPollData(btn.value)">
-                        {{address}} 
-                    </button>
-                </li>
-            </ul>
-        </div>
+            <div class="basic-container">
+                <mat-expansion-panel *ngFor="let panel of panels">
+                    <mat-expansion-panel-header>
+                            {{panel.content.name}}
+                    </mat-expansion-panel-header>
+                    Address: {{panel.address}}
+                    <br>
+                    Description: {{panel.content.description}}
+                    <br>
+                    Candidates: {{panel.content.candidates}}
+                </mat-expansion-panel>
+            </div>
         <div *ngIf="!pollAddresses">
             You have not yet created any polls.
             <br>
@@ -19,3 +24,4 @@
         </div>
     </div>
 </div>
+

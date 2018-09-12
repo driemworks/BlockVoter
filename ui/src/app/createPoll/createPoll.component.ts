@@ -22,9 +22,6 @@ export class CreatePollComponent implements OnInit  {
     ngOnInit() {
         this.model = new PollModel('', '', '');
         this.gas = 30000;
-        this.dbService.getPollAddressesByChairman(this.web3Service.account).subscribe(res => {
-            console.log('your polls: ' + res);
-        });
     }
 
     onSubmitPoll() {
@@ -35,8 +32,7 @@ export class CreatePollComponent implements OnInit  {
                 this.dbService.savePollAddress(this.address, this.web3Service.account).subscribe(res => {
                     console.log(res);
                 });
-            },
-            (err) => {
+            }, (err) => {
                 this.errors = err;
             }
         );

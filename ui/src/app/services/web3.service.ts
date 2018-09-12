@@ -55,7 +55,7 @@ export class Web3Service {
 
           this.accounts = accs;
           // setting default account
-          this.account = this.accounts[0];
+          this.account = this.accounts[5];
 
           this._ngZone.run(() => {
             callback();

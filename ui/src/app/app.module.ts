@@ -12,6 +12,8 @@ import { VotingContractService } from './services/votingContract.service';
 import { DatabaseService } from './services/db.service';
 import { YourPollsComponent } from './yourPolls/yourPolls.component';
 import { AboutComponent } from './about/about.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatExpansionModule } from '@angular/material';
 
 const routes: Routes = [
     { path: 'create-poll', component: CreatePollComponent },
@@ -34,7 +36,9 @@ const routes: Routes = [
         routes, {enableTracing: true}
     ),
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatExpansionModule
   ],
   providers: [
     Web3Service,
