@@ -38,12 +38,26 @@ export class AppComponent implements OnInit {
 
   }
 
-  ngOnInit() {
-    this.router.navigateByUrl('/home');
-  }
+  ngOnInit() { }
 
   updateAccount() {
     this.web3Service.updateAccount(this.account);
+  }
+
+  onYourPolls() {
+    this.router.navigateByUrl('/your-polls');
+  }
+
+  onCreatePoll()  {
+      this.router.navigateByUrl('/create-poll');
+  }
+
+  onJoinPoll() {
+      this.router.navigateByUrl('/join-poll');
+  }
+
+  onAbout() {
+    this.router.navigateByUrl('/about');
   }
 
 }

@@ -6,27 +6,27 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { CreatePollComponent } from './createPoll/createPoll.component';
-import { HomeComponent } from './home/home.component';
 import { Web3Service } from './services/web3.service';
 import { JoinPollComponent } from './joinPoll/joinPoll.component';
 import { VotingContractService } from './services/votingContract.service';
 import { DatabaseService } from './services/db.service';
 import { YourPollsComponent } from './yourPolls/yourPolls.component';
+import { AboutComponent } from './about/about.component';
 
 const routes: Routes = [
-    { path: 'home', component: HomeComponent },
     { path: 'create-poll', component: CreatePollComponent },
     { path: 'join-poll', component: JoinPollComponent },
-    { path: 'your-polls', component: YourPollsComponent }
+    { path: 'your-polls', component: YourPollsComponent },
+    { path: 'about', component: AboutComponent }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     CreatePollComponent,
     JoinPollComponent,
-    YourPollsComponent
+    YourPollsComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

@@ -1,22 +1,31 @@
 <div class="header">
-  <div class="title">
-    <a class="block-vote-home" href="/home">BlockVoter</a>
-  </div>
-  <div class="accounts">
-    <select [(ngModel)]="account" (change)="updateAccount()">
-      <option>--accounts--</option>
-      <option *ngFor="let account of accounts" value={{account}}>
-        {{account}}
-      </option>
-    </select>
-  </div>
+  <a class="block-vote-home" href="/home">BlockVoter</a>
   <div class="network-info">
     <p *ngIf="!isConnectedToClient">Attempting to find network connection...</p>
     <p *ngIf="isConnectedToClient">Connected to network with account: {{account}}</p>
+    <div class="accounts">
+      <select [(ngModel)]="account" (change)="updateAccount()">
+        <option>--accounts--</option>
+        <option *ngFor="let account of accounts" value={{account}}>
+          {{account}}
+        </option>
+      </select>
+    </div>
   </div>
 </div>
-<br><br><br><br>
+<div class="home">
+  <button class="btn" (click)="onYourPolls()">Your Polls</button>
+  <button class="btn" (click)="onCreatePoll()">New Poll</button>
+  <button class="btn" (click)="onJoinPoll()">Join Poll</button>
+  <button class="btn" (click)="onAbout()">About</button>
+</div>
+
 <div class="router-outlet">
   <router-outlet></router-outlet>
 </div>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+<footer>
+  driemworks, 2018
+</footer>
 

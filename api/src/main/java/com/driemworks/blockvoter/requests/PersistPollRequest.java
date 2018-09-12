@@ -1,26 +1,31 @@
 package com.driemworks.blockvoter.requests;
 
 /**
- * The request object for retriving a poll  by chairman address
+ * The request object for persisting a new poll
  * @author Tony
  */
-public class RetrievePollRequest {
+public class PersistPollRequest {
+
+    /** The poll address */
+    private String pollAddress;
 
     /** The chairman address */
     private String chairmanAddress;
 
     /**
-     * The default constructor
+     * Getter for the poll address
+     * @return {@link String}
      */
-    public RetrievePollRequest() {
+    public String getPollAddress() {
+        return pollAddress;
     }
 
     /**
-     * The constructor with the chairman address
-     * @param chairmanAddress The chairman address
+     * Setter for the poll address
+     * @param pollAddress The poll address to set
      */
-    public RetrievePollRequest(String chairmanAddress) {
-        this.chairmanAddress = chairmanAddress;
+    public void setPollAddress(String pollAddress) {
+        this.pollAddress = pollAddress;
     }
 
     /**

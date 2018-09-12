@@ -1,13 +1,21 @@
 <div class="your-contracts">
-    <h3>Your Polls</h3>
-    <div *ngIf="pollAddresses">
-        <ul>
-            <li *ngFor="let address of pollAddresses" value={{address}}>
-                {{address}}
-            </li>
-        </ul>
+    <div class="page-title">
+        <span>Your Polls</span>
     </div>
-    <div *ngIf="!pollAddresses">
-        You have not yet created any polls.
+    <div class="poll-data">
+        <div *ngIf="pollAddresses">
+            <ul>
+                <li #item *ngFor="let address of pollAddresses" value={{address}} >
+                    <button #btn value={{address}} (click)="getPollData(btn.value)">
+                        {{address}} 
+                    </button>
+                </li>
+            </ul>
+        </div>
+        <div *ngIf="!pollAddresses">
+            You have not yet created any polls.
+            <br>
+            <a href="/create-poll">Create Poll</a>
+        </div>
     </div>
 </div>

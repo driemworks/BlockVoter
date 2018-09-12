@@ -2,3 +2,7 @@
     width: 400px;
     text-align: right;
 }
+
+.search label {
+    margin-right: 10px;
+}
