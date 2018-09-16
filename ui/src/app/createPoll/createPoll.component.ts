@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PollModel } from '../pollModel';
+import { PollModel } from '../pollFormModel';
 import { Web3Service } from '../services/web3.service';
 import { DatabaseService } from '../services/db.service';
 
@@ -26,6 +26,7 @@ export class CreatePollComponent implements OnInit  {
 
     onSubmitPoll() {
         const candidates = this.model.candidates.split(',');
+
         this.web3Service.deployContract(this.model.name, this.model.description, candidates, this.gas,
             (instance) => {
                 this.address = instance.address;

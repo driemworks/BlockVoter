@@ -8,13 +8,23 @@
             <div class="basic-container">
                 <mat-expansion-panel *ngFor="let panel of panels">
                     <mat-expansion-panel-header>
-                            {{panel.content.name}}
+                            {{panel.poll.name}}
                     </mat-expansion-panel-header>
                     Address: {{panel.address}}
                     <br>
-                    Description: {{panel.content.description}}
+                    Description: {{panel.poll.description}}
                     <br>
-                    Candidates: {{panel.content.candidates}}
+                    Candidates: {{panel.poll.candidates}}
+                    <br>
+                    <div>
+                        Results: 
+                        <ul>
+                            <li *ngFor="let result of panel.results" value={{result.candidate}}>
+                                {{result.candidate}}: {{result.result}}
+                            </li>
+                        </ul>
+                    </div>
+                    <button class="destruct-btn" mat-button (click)="openDialog(panel.address)">Destruct</button>
                 </mat-expansion-panel>
             </div>
         <div *ngIf="!pollAddresses">
@@ -24,4 +34,3 @@
         </div>
     </div>
 </div>
-

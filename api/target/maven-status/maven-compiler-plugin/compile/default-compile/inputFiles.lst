@@ -1,10 +1,10 @@
 D:\work\BlockVoter\api\src\main\java\com\driemworks\blockvoter\responses\RetrievePollResponse.java
 D:\work\BlockVoter\api\src\main\java\com\driemworks\blockvoter\model\PollDTO.java
 D:\work\BlockVoter\api\src\main\java\com\driemworks\blockvoter\controllers\PollController.java
-D:\work\BlockVoter\api\src\main\java\com\driemworks\blockvoter\requests\CreatePollRequest.java
 D:\work\BlockVoter\api\src\main\java\com\driemworks\blockvoter\service\impl\PollServiceImpl.java
+D:\work\BlockVoter\api\src\main\java\com\driemworks\blockvoter\responses\PersistPollResponse.java
+D:\work\BlockVoter\api\src\main\java\com\driemworks\blockvoter\requests\PersistPollRequest.java
 D:\work\BlockVoter\api\src\main\java\com\driemworks\blockvoter\AppRunner.java
 D:\work\BlockVoter\api\src\main\java\com\driemworks\blockvoter\repositories\PollRepository.java
 D:\work\BlockVoter\api\src\main\java\com\driemworks\blockvoter\requests\RetrievePollRequest.java
 D:\work\BlockVoter\api\src\main\java\com\driemworks\blockvoter\service\PollService.java
-D:\work\BlockVoter\api\src\main\java\com\driemworks\blockvoter\responses\CreatePollResponse.java

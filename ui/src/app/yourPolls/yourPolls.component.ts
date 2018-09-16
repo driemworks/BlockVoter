@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Web3Service } from '../services/web3.service';
 import { DatabaseService } from '../services/db.service';
 import { VotingContractService } from '../services/votingContract.service';
-import { MatExpansionPanel } from '@angular/material';
-import { PollModel } from '../pollModel';
+import { MatDialog, MatDialogConfig } from '@angular/material';
+import { PollModel } from '../pollFormModel';
+import { DialogComponent } from './dialog/dialog.component';
 
 @Component({
 	selector: 'app-you-polls',
@@ -19,7 +20,8 @@ export class YourPollsComponent implements OnInit {
 
 	constructor(private web3Service: Web3Service,
 				private dbService: DatabaseService,
-				private votingContractService: VotingContractService) { }
+				private votingContractService: VotingContractService,
+				public dialog: MatDialog) { }
 
 	ngOnInit() {
 		console.log('account: ' + this.web3Service.account);
@@ -30,6 +32,7 @@ export class YourPollsComponent implements OnInit {
 					let _name: any;
 					let _description: any;
 					let _candidates: any;
+					const _results = [];
 					this.votingContractService.getName(contract, (name) => {
 						_name = this.web3Service.ItoAscii(name);
 					});
@@ -39,10 +42,26 @@ export class YourPollsComponent implements OnInit {
 					this.votingContractService.getCandidates(contract, (candidates) => {
 						_candidates = this.web3Service.toAscii(candidates);
 					});
-					this.panels.push({address: address, content: new PollModel(_name, _description, _candidates)});
+					let i = 0;
+					for (i = 0; i < _candidates.length; i++) {
+						this.votingContractService.getResultsForCandidateAtIndex(contract, i, (results) => {
+							_results.push({candidate: _candidates[i], result: results});
+						});
+					}
+
+					this.panels.push({address: address, poll: new PollModel(_name, _description, _candidates), results: _results});
 				});
 
 			});
+		});
+	}
+
+	openDialog(address) {
+		const config = new MatDialogConfig();
+		const dialogRef = this.dialog.open(DialogComponent, config);
+		dialogRef.componentInstance.address = address;
+		dialogRef.afterClosed().subscribe(result => {
+			console.log(`Dialog result: ${result}`);
 		});
 	}
 }

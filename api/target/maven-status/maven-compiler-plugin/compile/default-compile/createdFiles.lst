@@ -1,10 +1,10 @@
+com\driemworks\blockvoter\requests\PersistPollRequest.class
+com\driemworks\blockvoter\responses\PersistPollResponse.class
 com\driemworks\blockvoter\controllers\PollController.class
 com\driemworks\blockvoter\service\PollService.class
 com\driemworks\blockvoter\requests\RetrievePollRequest.class
-com\driemworks\blockvoter\responses\CreatePollResponse.class
 com\driemworks\blockvoter\AppRunner.class
 com\driemworks\blockvoter\model\PollDTO.class
 com\driemworks\blockvoter\responses\RetrievePollResponse.class
 com\driemworks\blockvoter\service\impl\PollServiceImpl.class
-com\driemworks\blockvoter\requests\CreatePollRequest.class
 com\driemworks\blockvoter\repositories\PollRepository.class

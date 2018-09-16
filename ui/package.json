@@ -22,6 +22,7 @@
     "@angular/platform-browser": "^6.0.0",
     "@angular/platform-browser-dynamic": "^6.0.0",
     "@angular/router": "^6.0.0",
+    "angular-custom-modal": "^1.2.0",
     "core-js": "^2.5.4",
     "eth-lib": "^0.2.8",
     "mongodb": "^3.1.4",

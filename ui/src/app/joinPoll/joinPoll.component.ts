@@ -25,6 +25,7 @@ export class JoinPollComponent implements OnInit {
     ngOnInit() { }
 
     onJoinPoll() {
+        this.contractAddress = this.contractAddress.trim();
         this.web3Service.getVoteContractByAddress(this.contractAddress, (contract) => {
             this.contract = contract;
             this.getCandidates();

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
  * @author Tony
  */
 @RestController
+@CrossOrigin(origins="http://localhost:4200")
 public class PollController {
 
     /**
@@ -26,7 +27,6 @@ public class PollController {
      * @param persistPollRequest The create poll request
      * @return {@link PersistPollResponse}
      */
-    @CrossOrigin(origins="http://localhost:4200")
     @RequestMapping(value="/poll", method=RequestMethod.POST)
     public PersistPollResponse savePoll(@RequestBody PersistPollRequest persistPollRequest) {
         return pollService.persistPoll(persistPollRequest);
@@ -37,7 +37,6 @@ public class PollController {
      * @param chairmanAddress The chairman address
      * @return {@link RetrievePollResponse}
      */
-    @CrossOrigin(origins="http://localhost:4200")
     @RequestMapping(value="/poll", method=RequestMethod.GET)
     public RetrievePollResponse findPollByChairmanAddress(String chairmanAddress) {
         return pollService.findByChairman(chairmanAddress);

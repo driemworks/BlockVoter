@@ -13,7 +13,8 @@ import { DatabaseService } from './services/db.service';
 import { YourPollsComponent } from './yourPolls/yourPolls.component';
 import { AboutComponent } from './about/about.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatExpansionModule, MatMenuModule } from '@angular/material';
+import { MatExpansionModule, MatMenuModule, MatDialogModule } from '@angular/material';
+import { DialogComponent } from './yourPolls/dialog/dialog.component';
 
 const routes: Routes = [
     { path: 'create-poll', component: CreatePollComponent },
@@ -28,7 +29,9 @@ const routes: Routes = [
     CreatePollComponent,
     JoinPollComponent,
     YourPollsComponent,
-    AboutComponent
+    AboutComponent,
+    DialogComponent,
+    JoinPollComponent
   ],
   imports: [
     BrowserModule,
@@ -39,12 +42,17 @@ const routes: Routes = [
     FormsModule,
     BrowserAnimationsModule,
     MatExpansionModule,
-    MatMenuModule
+    MatMenuModule,
+    MatDialogModule
   ],
   providers: [
     Web3Service,
     VotingContractService,
     DatabaseService
+  ],
+  entryComponents: [
+    YourPollsComponent,
+    DialogComponent
   ],
   bootstrap: [AppComponent]
 })

@@ -1,0 +1,14 @@
+.dialog {
+
+}
+
+.destruct {
+    background-color: red;
+    color: white;
+    font-style: bold;
+    float: left;
+}
+
+.cancel {
+    float: right;
+}

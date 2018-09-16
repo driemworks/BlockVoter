@@ -1,3 +1,29 @@
 .poll-data {
     margin-top: 20px;
 }
+
+.delete {
+    color: red;
+    text-decoration: none;
+}
+
+.delete:hover {
+    font-weight: bold;
+}
+
+.winner {
+    color: green;
+}
+
+.destruct-btn {
+    background:none!important;
+    color: red;
+    border: none;
+    padding:0!important;
+    font: inherit;
+    cursor: pointer;
+}
+
+.destruct-btn:hover {
+    font-weight: bold;
+}
